@@ -1,5 +1,5 @@
 # WorldCup Scoreboard 
-## JDK version used during development
+## JDK distribution and version used during development
 ```
 Azul Zulu@21.0.4
 ```
