@@ -13,7 +13,7 @@ class WorldCupScoreboardTest extends Specification {
   Scoreboard scoreboard
 
   def setup() {
-    scoreboard = new WorldCupScoreboard() // new instance before each testcase
+    scoreboard = new WorldCupScoreboard()
   }
 
   def "should starting game be added to scoreboard with 0:0 score"() {
