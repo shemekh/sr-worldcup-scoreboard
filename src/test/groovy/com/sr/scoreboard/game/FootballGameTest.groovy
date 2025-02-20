@@ -56,4 +56,18 @@ class FootballGameTest extends Specification {
       3         | -5
       -3        | -2
   }
+
+  def "should map to GameDto properly"() {
+    given:
+      def game = FootballGame.of(HOME_TEAM, AWAY_TEAM)
+      game.updateScore(3, 2)
+    when:
+      def gameDto = game.toDto()
+    then:
+      gameDto instanceof GameDto
+      gameDto.homeTeam() == HOME_TEAM
+      gameDto.awayTeam() == AWAY_TEAM
+      gameDto.homeScore() == 3
+      gameDto.awayScore() == 2
+  }
 }

@@ -33,8 +33,13 @@ public class FootballGame implements Game {
   }
 
   @Override
+  public GameDto toDto() {
+    return new GameDto(homeTeam, awayTeam, homeScore, awayScore);
+  }
+
+  @Override
   public String toString() {
-    return homeTeam + " " + homeScore + "-" + awayScore + " " + awayTeam;
+    return "%s %d - %d %s".formatted(homeTeam, homeScore, awayScore, awayTeam);
   }
 
   @Override

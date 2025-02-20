@@ -1,6 +1,6 @@
 package com.sr.scoreboard;
 
-import com.sr.scoreboard.game.Game;
+import com.sr.scoreboard.game.GameDto;
 import java.util.List;
 
 public class WorldCupScoreboard implements Scoreboard {
@@ -21,7 +21,7 @@ public class WorldCupScoreboard implements Scoreboard {
   }
 
   @Override
-  public List<Game> getSummary() {
+  public List<GameDto> getSummary() {
     return null;
   }
 }

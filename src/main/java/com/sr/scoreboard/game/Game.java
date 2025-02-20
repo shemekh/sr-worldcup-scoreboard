@@ -5,4 +5,6 @@ public interface Game {
   void updateScore(int homeScore, int awayScore);
 
   int getTotalScore();
+
+  GameDto toDto();
 }

@@ -1,6 +1,6 @@
 package com.sr.scoreboard;
 
-import com.sr.scoreboard.game.Game;
+import com.sr.scoreboard.game.GameDto;
 import java.util.List;
 
 public interface Scoreboard {
@@ -11,5 +11,5 @@ public interface Scoreboard {
 
   void finishGame(String homeTeam, String awayTeam);
 
-  List<Game> getSummary();
+  List<GameDto> getSummary();
 }
