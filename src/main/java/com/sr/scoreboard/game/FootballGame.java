@@ -20,11 +20,41 @@ public class FootballGame implements Game {
 
   @Override
   public void updateScore(int homeScore, int awayScore) {
+    if (homeScore < 0 || awayScore < 0) {
+      throw new IllegalArgumentException("Score value should never be negative!");
+    }
+    this.homeScore = homeScore;
+    this.awayScore = awayScore;
   }
 
   @Override
   public int getTotalScore() {
-    return 0;
+    return homeScore + awayScore;
+  }
+
+  @Override
+  public String toString() {
+    return homeTeam + " " + homeScore + "-" + awayScore + " " + awayTeam;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    FootballGame that = (FootballGame) o;
+    return homeTeam.equals(that.homeTeam) && awayTeam.equals(that.awayTeam);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = homeTeam.hashCode();
+    result = 31 * result + awayTeam.hashCode();
+    return result;
   }
 
   public String getHomeTeam() {
